@@ -9,41 +9,21 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.example.oscarraig.justjava.MainActivity">
+    tools:context="com.example.oscarraig.justjava.controller.MainActivity">
 
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16sp"
-        android:text="QUANTITY" />
-    <TextView
-        android:id="@+id/quantity_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        />
+        android:text="LIST OF GAMES" />
+
+
     <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16sp"
-        android:onClick="submitOrder"
-        android:text="Order"/>
-    <EditText
-        android:id="@+id/edit_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="escriu el que vulguis"
-        android:textSize="16sp"
-        android:textColor="@android:color/black"
-        />
-    <Button
-        android:id="@+id/open_window"
+        android:id="@+id/plat_letters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16sp"
         android:onClick="openWindow"
-        android:text="Open window"/>
+        android:text="Play Letters"/>
 </LinearLayout>

@@ -7,6 +7,8 @@ import android.test.UiThreadTest;
 import android.test.suitebuilder.annotation.SmallTest;
 import android.widget.TextView;
 
+import com.example.oscarraig.justjava.controller.MainActivity;
+
 import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;
