@@ -24,7 +24,7 @@ public class PlayLetters {
     }
 
 
-    public void start() {
+    public void play() {
         selectWinningLetter();
         state = GameStatus.STARTED;
     }
@@ -41,5 +41,9 @@ public class PlayLetters {
         if( winningLetter.equals(this.getWinningLetter())) {
             state = GameStatus.ENDED;
         }
+    }
+
+    public void stop() {
+
     }
 }

@@ -30,7 +30,7 @@ public class PlayLettersShould {
 
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.start();
+        playLetters.play();
         assertThat(playLetters.getWinningLetter(),is(EXPECTED_LETTER));
 
     }
@@ -38,7 +38,7 @@ public class PlayLettersShould {
     public void intentWinningLetterEndGame() {
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.start();
+        playLetters.play();
         String winningLetter = EXPECTED_LETTER;
         playLetters.intent(winningLetter);
         assertThat(playLetters.getState(),is(GameStatus.ENDED));
@@ -48,7 +48,7 @@ public class PlayLettersShould {
     public void intentNoWinningLetterNotEndGame() {
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.start();
+        playLetters.play();
         String winningLetter = A_NO_WINNING_LETTER;
         playLetters.intent(winningLetter);
         assertThat(playLetters.getState(),is(GameStatus.STARTED));
