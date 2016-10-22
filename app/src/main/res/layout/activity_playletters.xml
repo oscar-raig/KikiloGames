@@ -8,29 +8,38 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
     tools:context="com.example.oscarraig.justjava.controller.PlayLettersActivity">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="100sp">
+        <Button
+            android:id="@+id/intent_A"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:onClick="intent"
+            android:text="A"/>
+        <Button
+            android:id="@+id/intent_B"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:onClick="intent"
+            android:text="B"/>
+    </LinearLayout>
     <TextView
         android:id="@+id/winning_letter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="20sp"
+        android:layout_height="20sp"
         android:text="A"
         android:textSize="16sp"
-        android:textColor="@android:color/black"
-        />
-    <Button
-        android:id="@+id/intent_A"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16sp"
-        android:onClick="intent"
-        android:text="A"/>
-    <Button
-        android:id="@+id/intent_B"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16sp"
-        android:onClick="intent"
-        android:text="B"/>
+        android:textColor="@android:color/black" />
+    <LinearLayout
+        android:layout_width="200sp"
+        android:layout_height="200sp">
     <Button
         android:id="@+id/returnTomenu"
         android:layout_width="wrap_content"
@@ -45,5 +54,5 @@
         android:layout_marginTop="70sp"
         android:onClick="play"
         android:text="PLAY"/>
-
+    </LinearLayout>
 </LinearLayout>
