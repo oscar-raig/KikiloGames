@@ -16,7 +16,6 @@ public class PlayLettersActivity extends AppCompatActivity {
     }
 
     public void returnToMenu(View view) {
-        Intent menuIntent = new Intent(this, MainActivity.class);
-        startActivity(menuIntent);
+        this.finish();
     }
 }
