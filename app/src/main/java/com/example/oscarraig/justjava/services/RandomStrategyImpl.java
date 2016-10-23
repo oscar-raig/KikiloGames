@@ -4,7 +4,7 @@ package com.example.oscarraig.justjava.services;
 import java.util.Random;
 
 public class RandomStrategyImpl implements RandomStrategy {
-    String[] letters = {"A", "B","C"};
+    String[] letters = {"A", "B","C","D"};
 
 
 

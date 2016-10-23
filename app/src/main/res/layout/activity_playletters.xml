@@ -18,14 +18,16 @@
         android:layout_height="100sp">
         <Button
             android:id="@+id/intent_A"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:onClick="intent"
             android:text="A"/>
         <Button
             android:id="@+id/intent_B"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:layout_marginLeft="16sp"
@@ -33,12 +35,22 @@
             android:text="B"/>
         <Button
             android:id="@+id/intent_C"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
             android:layout_marginLeft="16sp"
             android:onClick="intent"
             android:text="C"/>
+        <Button
+            android:id="@+id/intent_D"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16sp"
+            android:layout_marginLeft="16sp"
+            android:onClick="intent"
+            android:text="D"/>
     </LinearLayout>
     <TextView
         android:id="@+id/winning_letter"
