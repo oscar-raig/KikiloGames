@@ -1,12 +1,15 @@
 package com.example.oscarraig.justjava.controller;
 
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.MediaController;
 import android.widget.TextView;
 import android.graphics.Color;
+import android.widget.VideoView;
 
 import com.example.oscarraig.justjava.R;
 import com.example.oscarraig.justjava.domain.GameStatus;
@@ -45,6 +48,7 @@ public class PlayLettersActivity extends AppCompatActivity {
         playLetters.intent(intent);
         if( playLetters.getState() == GameStatus.ENDED) {
             view.setBackgroundColor(Color.GREEN);
+            playVideo();
         } else {
             view.setBackgroundColor(Color.RED);
         }
@@ -58,7 +62,7 @@ public class PlayLettersActivity extends AppCompatActivity {
         initializeColorForIntentButtons();
 
     }
-    public void initializeColorForIntentButtons() {
+    private void initializeColorForIntentButtons() {
         LinearLayout layout = (LinearLayout)findViewById(R.id.groupIntentButtons);
         for (int i = 0; i < layout.getChildCount(); i++) {
             View button = layout.getChildAt(i);
@@ -67,4 +71,13 @@ public class PlayLettersActivity extends AppCompatActivity {
             }
         }
     }
+
+    private void playVideo(){
+        VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
+        MediaController mc = new MediaController(this);
+        mVideoView.setMediaController(mc);
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.we_win_mp4));
+        mVideoView.start();
+    }
+
 }

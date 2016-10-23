@@ -78,4 +78,9 @@
         android:onClick="play"
         android:text="PLAY"/>
     </LinearLayout>
+    <VideoView
+        android:id="@+id/videoview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        />
 </LinearLayout>
