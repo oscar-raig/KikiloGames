@@ -76,8 +76,7 @@ public class PlayLettersActivity extends AppCompatActivity {
     private void playVideo(){
         VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
         mVideoView.setVisibility(View.VISIBLE);
-        MediaController mc = new MediaController(this);
-        mVideoView.setMediaController(mc);
+        mVideoView.setMediaController(null);
         mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.we_win_mp4));
         mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
 
