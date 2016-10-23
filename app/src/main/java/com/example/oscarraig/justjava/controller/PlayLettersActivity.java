@@ -48,6 +48,9 @@ public class PlayLettersActivity extends AppCompatActivity {
             case R.id.intent_B:
                 intent = "B";
                 break;
+            case R.id.intent_C:
+                intent = "C";
+                break;
         }
         playLetters.intent(intent);
         if( playLetters.getState() == GameStatus.ENDED) {
@@ -68,6 +71,10 @@ public class PlayLettersActivity extends AppCompatActivity {
 
         Button intentB = (Button)findViewById(R.id.intent_B);
         intentB.setBackgroundColor(Color.GRAY);
+
+        Button intentC = (Button)findViewById(R.id.intent_C);
+        intentC.setBackgroundColor(Color.GRAY);
+
 
     }
 }
