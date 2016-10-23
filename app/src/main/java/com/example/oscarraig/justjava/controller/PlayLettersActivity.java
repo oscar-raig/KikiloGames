@@ -1,5 +1,6 @@
 package com.example.oscarraig.justjava.controller;
 
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -74,10 +75,20 @@ public class PlayLettersActivity extends AppCompatActivity {
 
     private void playVideo(){
         VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
+        mVideoView.setVisibility(View.VISIBLE);
         MediaController mc = new MediaController(this);
         mVideoView.setMediaController(mc);
         mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.we_win_mp4));
+        mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
+
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
+                mVideoView.setVisibility(View.INVISIBLE);
+            }
+        });
         mVideoView.start();
     }
+
 
 }
