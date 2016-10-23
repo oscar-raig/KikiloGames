@@ -27,13 +27,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16sp"
+            android:layout_marginLeft="16sp"
             android:onClick="intent"
             android:text="B"/>
     </LinearLayout>
     <TextView
         android:id="@+id/winning_letter"
-        android:layout_width="20sp"
+        android:layout_width="match_parent"
         android:layout_height="20sp"
+        android:gravity="center"
         android:text="A"
         android:textSize="16sp"
         android:textColor="@android:color/black" />
