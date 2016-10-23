@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.graphics.Color;
 
@@ -15,7 +16,6 @@ import com.example.oscarraig.justjava.services.RandomStrategyImpl;
 public class PlayLettersActivity extends AppCompatActivity {
 
     PlayLetters playLetters;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,18 +40,8 @@ public class PlayLettersActivity extends AppCompatActivity {
         if( playLetters.getState() == GameStatus.ENDED) {
             return;
         }
-        String intent = "A";
-        switch (view.getId()) {
-            case R.id.intent_A:
-                intent = "A";
-                break;
-            case R.id.intent_B:
-                intent = "B";
-                break;
-            case R.id.intent_C:
-                intent = "C";
-                break;
-        }
+        Button button = (Button)findViewById(view.getId());
+        String intent =  button.getText().toString();
         playLetters.intent(intent);
         if( playLetters.getState() == GameStatus.ENDED) {
             view.setBackgroundColor(Color.GREEN);
@@ -61,20 +51,20 @@ public class PlayLettersActivity extends AppCompatActivity {
     }
     private void setWinningLetter(){
         String winningLetter = playLetters.getWinningLetter();
-        TextView text = (TextView)findViewById(R.id.winning_letter);
+        TextView textWinningLetter = (TextView)findViewById(R.id.winning_letter);
 
-        text.setText(winningLetter);
+        textWinningLetter.setText(winningLetter);
 
+        initializeColorForIntentButtons();
 
-        Button intentA = (Button)findViewById(R.id.intent_A);
-        intentA.setBackgroundColor(Color.GRAY);
-
-        Button intentB = (Button)findViewById(R.id.intent_B);
-        intentB.setBackgroundColor(Color.GRAY);
-
-        Button intentC = (Button)findViewById(R.id.intent_C);
-        intentC.setBackgroundColor(Color.GRAY);
-
-
+    }
+    public void initializeColorForIntentButtons() {
+        LinearLayout layout = (LinearLayout)findViewById(R.id.groupIntentButtons);
+        for (int i = 0; i < layout.getChildCount(); i++) {
+            View button = layout.getChildAt(i);
+            if (button instanceof Button) {
+                button.setBackgroundColor(Color.GRAY);
+            }
+        }
     }
 }
