@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.MediaController;
 import android.widget.TextView;
 import android.graphics.Color;
 import android.widget.VideoView;
@@ -73,7 +72,7 @@ public class PlayLettersActivity extends AppCompatActivity {
         VideoView mVideoView = (VideoView)findViewById(R.id.videoview);
         mVideoView.setVisibility(View.VISIBLE);
         mVideoView.setMediaController(null);
-        mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.we_win_mp4));
+        mVideoView.setVideoURI(Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.we_win));
         mVideoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
 
             @Override
