@@ -24,6 +24,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16sp"
-        android:onClick="openWindow"
-        android:text="Play Letters"/>
+        android:text="@string/play_letters"/>
 </LinearLayout>
