@@ -30,10 +30,6 @@ public class PlayLettersActivity extends AppCompatActivity {
         setWinningLetter();
     }
 
-    public void returnToMenu(View view) {
-        this.finish();
-    }
-
     public void play(View view) {
         playLetters.stop();
         playLetters.play();

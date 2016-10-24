@@ -61,26 +61,21 @@
         android:textSize="16sp"
         android:textColor="@android:color/black" />
     <LinearLayout
-        android:layout_width="200sp"
-        android:layout_height="200sp">
-    <Button
-        android:id="@+id/returnTomenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70sp"
-        android:onClick="returnToMenu"
-        android:text="RETURN MENU"/>
-    <Button
-        android:id="@+id/play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="70sp"
-        android:onClick="play"
-        android:text="PLAY"/>
+        android:layout_width="match_parent"
+        android:layout_height="200sp"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/play"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70sp"
+            android:onClick="play"
+            android:layout_weight="1"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="PLAY"/>
     </LinearLayout>
     <VideoView
         android:id="@+id/videoview"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        />
+        android:layout_height="wrap_content" />
 </LinearLayout>
