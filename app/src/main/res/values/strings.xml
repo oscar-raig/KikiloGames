@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Kikilo Games</string>
     <string name="play_letters">Play Letters</string>
+    <string name="weather">weather</string>
 </resources>

@@ -20,9 +20,17 @@
 
 
     <Button
-        android:id="@+id/plat_letters"
+        android:id="@+id/play_letters"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16sp"
         android:text="@string/play_letters"/>
+
+    <Button
+        android:id="@+id/weather"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16sp"
+        android:text="@string/weather"/>
+
 </LinearLayout>

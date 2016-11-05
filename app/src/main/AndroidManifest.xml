@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".controller.PlayLettersActivity"></activity>
+        <activity android:name=".controller.WeatherActivity"></activity>
     </application>
 
 </manifest>

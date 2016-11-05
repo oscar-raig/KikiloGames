@@ -25,5 +25,5 @@ public class MainActivityTest extends
       protected void setUp() throws Exception {
           super.setUp();
       }
-    
+
 }
