@@ -1,5 +1,6 @@
 package com.example.oscarraig.justjava.controller;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -11,8 +12,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.oscarraig.justjava.BuildConfig;
 import com.example.oscarraig.justjava.R;
@@ -90,6 +93,18 @@ public class ForecastFragment extends Fragment {
         listView.setAdapter(mForecastAdapter);
 
         getForeCast();
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                CharSequence text = "Hello toast!" + adapterView.getItemAtPosition(i);;
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(getActivity(), text, duration);
+                toast.show();
+            }
+        });
         return rootView;
 
     }
