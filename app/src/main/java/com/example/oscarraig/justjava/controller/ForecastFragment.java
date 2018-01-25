@@ -180,7 +180,7 @@ public class ForecastFragment extends Fragment {
 
             } catch (IOException e) {
                 Log.e("PlaceholderFragment", "Error ", e);
-                // If the code didn't successfully get the weather data, there's no point in attemping
+                // If the code didn't successfully get the weatherButton data, there's no point in attemping
                 // to parse it.
                 return null;
             } finally{
@@ -209,7 +209,7 @@ public class ForecastFragment extends Fragment {
         }
 
         /**
-         * Prepare the weather high/lows for presentation.
+         * Prepare the weatherButton high/lows for presentation.
          */
         private String formatHighLows(double high, double low) {
             // For presentation, assume the user doesn't care about tenths of a degree.
@@ -232,7 +232,7 @@ public class ForecastFragment extends Fragment {
 
             // These are the names of the JSON objects that need to be extracted.
             final String OWM_LIST = "list";
-            final String OWM_WEATHER = "weather";
+            final String OWM_WEATHER = "weatherButton";
             final String OWM_TEMPERATURE = "temp";
             final String OWM_MAX = "max";
             final String OWM_MIN = "min";
@@ -247,7 +247,7 @@ public class ForecastFragment extends Fragment {
 
             // Since this data is also sent in-order and the first day is always the
             // current day, we're going to take advantage of that to get a nice
-            // normalized UTC date for all of our weather.
+            // normalized UTC date for all of our weatherButton.
 
             Time dayTime = new Time();
             dayTime.setToNow();
@@ -276,7 +276,7 @@ public class ForecastFragment extends Fragment {
                 dateTime = dayTime.setJulianDay(julianStartDay+i);
                 day = getReadableDateString(dateTime);
 
-                // description is in a child array called "weather", which is 1 element long.
+                // description is in a child array called "weatherButton", which is 1 element long.
                 JSONObject weatherObject = dayForecast.getJSONArray(OWM_WEATHER).getJSONObject(0);
                 description = weatherObject.getString(OWM_DESCRIPTION);
 

@@ -16,7 +16,7 @@ import com.example.oscarraig.justjava.domain.GameStatus;
 import com.example.oscarraig.justjava.services.GuessLetterGame;
 import com.example.oscarraig.justjava.services.RandomStrategyImpl;
 
-public class PlayLettersActivity extends AppCompatActivity {
+public class GuessLetterGameActivity extends AppCompatActivity {
 
     GuessLetterGame guessLetterGame;
 
@@ -35,8 +35,8 @@ public class PlayLettersActivity extends AppCompatActivity {
         setWinningLetter();
     }
 
-    // when the user test
-    public void intent(View view) {
+
+    public void guessLetter(View view) {
 
         if( guessLetterGame.getState() == GameStatus.ENDED) {
             return;
