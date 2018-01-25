@@ -3,7 +3,7 @@ package com.example.oscarraig.justjava.services;
 
 import com.example.oscarraig.justjava.domain.GameStatus;
 
-public class PlayLetters {
+public class HitLetters {
     private static final String A = "a";
     private RandomStrategy randomStrategy;
     private String winningLetter;
@@ -14,7 +14,7 @@ public class PlayLetters {
 
     private GameStatus state;
 
-    public PlayLetters(RandomStrategy randomstrategy) {
+    public HitLetters(RandomStrategy randomstrategy) {
         this.randomStrategy = randomstrategy;
     }
 
@@ -37,7 +37,7 @@ public class PlayLetters {
         return randomStrategy.get();
     }
 
-    public void intent(String winningLetter) {
+    public void tryLetter(String winningLetter) {
         if( winningLetter.equals(this.getWinningLetter())) {
             state = GameStatus.ENDED;
         }

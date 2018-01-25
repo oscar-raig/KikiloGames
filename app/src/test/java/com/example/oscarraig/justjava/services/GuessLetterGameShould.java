@@ -22,11 +22,10 @@ public class PlayLettersShould {
     public static void setUp(){
 
         randomStrategy = Mockito.mock(RandomStrategy.class);
-
     }
 
     @Test
-    public void startGameAndGnenerateAWinningLetter() {
+    public void startGameAndGenenerateAWinningLetter() {
 
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
@@ -35,22 +34,22 @@ public class PlayLettersShould {
 
     }
     @Test
-    public void intentWinningLetterEndGame() {
+    public void tryLetterWithWinningLetterEndGame() {
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
         playLetters.play();
         String winningLetter = EXPECTED_LETTER;
-        playLetters.intent(winningLetter);
+        playLetters.tryLetter(winningLetter);
         assertThat(playLetters.getState(),is(GameStatus.ENDED));
     }
 
     @Test
-    public void intentNoWinningLetterNotEndGame() {
+    public void tryLetterWithNoWinningLetterNotEndGame() {
         PlayLetters playLetters = new PlayLetters(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
         playLetters.play();
         String winningLetter = A_NO_WINNING_LETTER;
-        playLetters.intent(winningLetter);
+        playLetters.tryLetter(winningLetter);
         assertThat(playLetters.getState(),is(GameStatus.STARTED));
     }
 }
