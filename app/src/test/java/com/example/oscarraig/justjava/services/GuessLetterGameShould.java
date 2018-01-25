@@ -12,7 +12,7 @@ import static org.hamcrest.core.Is.is;
 import static org.mockito.Mockito.when;
 
 
-public class PlayLettersShould {
+public class GuessLetterGameShould {
 
     private static final String EXPECTED_LETTER = "a";
     public static final String A_NO_WINNING_LETTER = "b";
@@ -27,29 +27,29 @@ public class PlayLettersShould {
     @Test
     public void startGameAndGenenerateAWinningLetter() {
 
-        PlayLetters playLetters = new PlayLetters(randomStrategy);
+        GuessLetterGame guessLetterGame = new GuessLetterGame(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.play();
-        assertThat(playLetters.getWinningLetter(),is(EXPECTED_LETTER));
+        guessLetterGame.play();
+        assertThat(guessLetterGame.getWinningLetter(),is(EXPECTED_LETTER));
 
     }
     @Test
     public void tryLetterWithWinningLetterEndGame() {
-        PlayLetters playLetters = new PlayLetters(randomStrategy);
+        GuessLetterGame guessLetterGame = new GuessLetterGame(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.play();
+        guessLetterGame.play();
         String winningLetter = EXPECTED_LETTER;
-        playLetters.tryLetter(winningLetter);
-        assertThat(playLetters.getState(),is(GameStatus.ENDED));
+        guessLetterGame.tryLetter(winningLetter);
+        assertThat(guessLetterGame.getState(),is(GameStatus.ENDED));
     }
 
     @Test
     public void tryLetterWithNoWinningLetterNotEndGame() {
-        PlayLetters playLetters = new PlayLetters(randomStrategy);
+        GuessLetterGame guessLetterGame = new GuessLetterGame(randomStrategy);
         when(randomStrategy.get()).thenReturn(EXPECTED_LETTER);
-        playLetters.play();
+        guessLetterGame.play();
         String winningLetter = A_NO_WINNING_LETTER;
-        playLetters.tryLetter(winningLetter);
-        assertThat(playLetters.getState(),is(GameStatus.STARTED));
+        guessLetterGame.tryLetter(winningLetter);
+        assertThat(guessLetterGame.getState(),is(GameStatus.STARTED));
     }
 }

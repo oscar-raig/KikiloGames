@@ -13,44 +13,47 @@ import android.widget.VideoView;
 
 import com.example.oscarraig.justjava.R;
 import com.example.oscarraig.justjava.domain.GameStatus;
-import com.example.oscarraig.justjava.services.PlayLetters;
+import com.example.oscarraig.justjava.services.GuessLetterGame;
 import com.example.oscarraig.justjava.services.RandomStrategyImpl;
 
 public class PlayLettersActivity extends AppCompatActivity {
 
-    PlayLetters playLetters;
+    GuessLetterGame guessLetterGame;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_playletters);
-        playLetters = new PlayLetters(new RandomStrategyImpl());
-        playLetters.play();
+        guessLetterGame = new GuessLetterGame(new RandomStrategyImpl());
+        guessLetterGame.play();
         setWinningLetter();
     }
 
     public void play(View view) {
-        playLetters.stop();
-        playLetters.play();
+        guessLetterGame.stop();
+        guessLetterGame.play();
         setWinningLetter();
     }
 
+    // when the user test
     public void intent(View view) {
-        if( playLetters.getState() == GameStatus.ENDED) {
+
+        if( guessLetterGame.getState() == GameStatus.ENDED) {
             return;
         }
         Button button = (Button)findViewById(view.getId());
         String intent =  button.getText().toString();
-        playLetters.intent(intent);
-        if( playLetters.getState() == GameStatus.ENDED) {
+        guessLetterGame.tryLetter(intent);
+        if( guessLetterGame.getState() == GameStatus.ENDED) {
             view.setBackgroundColor(Color.GREEN);
             playVideo();
         } else {
             view.setBackgroundColor(Color.RED);
         }
     }
+
     private void setWinningLetter(){
-        String winningLetter = playLetters.getWinningLetter();
+        String winningLetter = guessLetterGame.getWinningLetter();
         TextView textWinningLetter = (TextView)findViewById(R.id.winning_letter);
 
         textWinningLetter.setText(winningLetter);

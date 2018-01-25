@@ -3,7 +3,7 @@ package com.example.oscarraig.justjava.services;
 
 import com.example.oscarraig.justjava.domain.GameStatus;
 
-public class HitLetters {
+public class GuessLetterGame {
     private static final String A = "a";
     private RandomStrategy randomStrategy;
     private String winningLetter;
@@ -14,7 +14,7 @@ public class HitLetters {
 
     private GameStatus state;
 
-    public HitLetters(RandomStrategy randomstrategy) {
+    public GuessLetterGame(RandomStrategy randomstrategy) {
         this.randomStrategy = randomstrategy;
     }
 
